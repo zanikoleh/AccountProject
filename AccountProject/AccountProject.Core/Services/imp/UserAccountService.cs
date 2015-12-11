@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services.imp
 {
-    class UserAccountService
+    class UserAccountService: IUserAccountService
     {
+
     }
 }

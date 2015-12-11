@@ -18,12 +18,12 @@ namespace DataAccess.Repositories.impl
         /// <summary>
         /// Gets all transactions for specific user 
         /// </summary>
-        /// <param name="_username">Username on which transactions to get</param>
+        /// <param name="userName">Username on which transactions to get</param>
         /// <returns>Collection of transactions</returns>
-        public IEnumerable<Transactions> GetTransactionOnUser(string _username)
+        public IEnumerable<Transactions> GetTransactionOnUser(string userName)
         {
             return from transaction in _repositoryBase.BankContext.Transactions
-                   where transaction.Username == _username
+                   where transaction.Username == userName
                    select transaction;
         }
     }

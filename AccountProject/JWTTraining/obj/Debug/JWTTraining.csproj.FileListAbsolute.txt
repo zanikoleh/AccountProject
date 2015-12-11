@@ -1,0 +1,9 @@
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\JWTTraining.exe.config
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\JWTTraining.exe
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\JWTTraining.pdb
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.csprojResolveAssemblyReference.cache
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.exe
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.pdb

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.impl
 {
-    class BankAccountRepository
+    class BankAccountRepository: IBankAccountRepository
     {
         private IRepositoryBase _repositoryBase;
 
@@ -103,6 +103,26 @@ namespace DataAccess.Repositories.impl
             }
 
             _repositoryBase.BankContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Transfers money from one user to another
+        /// </summary>
+        /// <param name="currentUserName">User, who wants to transfer money</param>
+        /// <param name="targetUserName">User, who will recieve money</param>
+        /// <param name="value">Amount of money</param>
+        public void TransferMoney(string currentUserName, string targetUserName, decimal value)
+        {
+            try
+            {
+                WithdrawMoney(currentUserName, value);
+                DepositMoney(targetUserName, value);
+            }
+
+            catch(ArgumentException e)
+            {
+                throw new ArgumentException("Can't perform transfer." + e.Message);
+            }
         }
     }
 }

@@ -102,23 +102,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\BankAccounts.cs" />
+    <Compile Include="Entity\Transactions.cs" />
     <Compile Include="Repositories\impl\BankAccountRepository.cs" />
+    <Compile Include="Repositories\IBankAccountRepository.cs" />
     <Compile Include="Repositories\IRepositoryBase.cs" />
     <Compile Include="Repositories\impl\RepositoryBase.cs" />
-    <Compile Include="Entity\BankAccounts.cs" />
     <Compile Include="Entity\C__MigrationHistory.cs" />
     <Compile Include="Entity\BankContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entity\Transactions.cs" />
     <Compile Include="Repositories\impl\TransactionRepository.cs" />
     <Compile Include="Repositories\impl\UserAccountRepository.cs" />
+    <Compile Include="Repositories\ITransactionRepository.cs" />
+    <Compile Include="Repositories\IUserAccountRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AccountProject.Models\AccountProject.Models.csproj">
+      <Project>{91c769d2-748f-4ebb-a87f-c96c839ce094}</Project>
+      <Name>AccountProject.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

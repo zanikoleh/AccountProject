@@ -60,9 +60,20 @@
     <Compile Include="Services\imp\BankAccountService.cs" />
     <Compile Include="Services\imp\TransactionService.cs" />
     <Compile Include="Services\imp\UserAccountService.cs" />
+    <Compile Include="Services\IUserAccountService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccountProject.Models\AccountProject.Models.csproj">
+      <Project>{91c769d2-748f-4ebb-a87f-c96c839ce094}</Project>
+      <Name>AccountProject.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\AccountProject.DataAccess.csproj">
+      <Project>{8dcc69ae-a122-4159-8b53-422208a525fc}</Project>
+      <Name>AccountProject.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
