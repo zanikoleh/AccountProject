@@ -1,0 +1,1 @@
+C:\Users\Админ\documents\visual studio 2015\Projects\AccountProject\DataAccess\bin\Debug\DataAccess.exe.config
