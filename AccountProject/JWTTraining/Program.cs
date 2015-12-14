@@ -24,7 +24,7 @@ namespace JWTTraining
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var sKey = new InMemorySymmetricSecurityKey(bytes);
-            Console.WriteLine(result.CreateToken().ToString());
+            //Console.WriteLine(result.CreateToken().ToString());
             Console.ReadKey();
         }
     }

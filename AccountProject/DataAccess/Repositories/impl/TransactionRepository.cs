@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.impl
 {
-    class TransactionRepository
+    public class TransactionRepository: ITransactionRepository
     {
         private IRepositoryBase _repositoryBase;
 

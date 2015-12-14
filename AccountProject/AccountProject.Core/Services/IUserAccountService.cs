@@ -8,5 +8,6 @@ namespace AccountProject.Core.Services
 {
     public interface IUserAccountService
     {
+        void Register(string username, string password);
     }
 }

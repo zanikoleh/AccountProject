@@ -10,8 +10,8 @@ namespace DataAccess
     {
         static void Main(string[] args)
         {
-            BankAccounts ac = new BankAccounts { Username = "Nazar", Password = "321" };
-            RepositoryBase bank = new RepositoryBase();
+            //BankAccounts ac = new BankAccounts { Username = "Nazar", Password = "321" };
+            //RepositoryBase bank = new RepositoryBase();
             //bank.AddNewAccount(ac);
             //bank.UpdateAccountBalance("Nazar", -40);
         }

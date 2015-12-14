@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    interface IUserAccountRepository
+    public interface IUserAccountRepository
     {
+        BankAccounts GetAccount(string userName, string password);
+        void AddNewAccount(string userName, string password);
     }
 }

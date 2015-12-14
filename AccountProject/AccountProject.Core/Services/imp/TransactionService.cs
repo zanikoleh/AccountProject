@@ -4,16 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Repositories;
+using AccountProject.Models;
 
 namespace AccountProject.Core.Services.imp
 {
-    public class Transaction
-    {
-        public string UserName { get; set; }
-        public decimal Amount { get; set; }
-    }
-
-    class TransactionService
+    public class TransactionService: ITransactionService
     {
         private ITransactionRepository _transactionRepository;
 

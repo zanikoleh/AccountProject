@@ -7,3 +7,12 @@ C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\b
 C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.csprojResolveAssemblyReference.cache
 C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.exe
 C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\JWTTraining.exe.config
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.exe
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\JWTTraining.exe
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\JWTTraining.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\System.IdentityModel.Tokens.Jwt.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\JWTTraining\obj\Debug\JWTTraining.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories.impl
 {
-    class BankAccountRepository: IBankAccountRepository
+    public class BankAccountRepository: IBankAccountRepository
     {
         private IRepositoryBase _repositoryBase;
 

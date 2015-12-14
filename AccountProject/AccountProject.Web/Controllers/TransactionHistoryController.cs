@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountProject.Core.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,12 +8,20 @@ using System.Web.Http;
 
 namespace AccountProject.Web.Controllers
 {
+    [Authorize]
     public class TransactionHistoryController : ApiController
     {
-        //protected BankAccountService _bankAccountService;
-        /*public IHttpActionResult Get()
+        private ITransactionService _transactionService;
+
+        public TransactionHistoryController(ITransactionService transactionService)
         {
-            //return BankAccountService;
-        }*/
+            this._transactionService = transactionService;
+        }
+
+        [Authorize]
+        public IHttpActionResult Get(string username)
+        {
+            return Ok(_transactionService.GetTransactionOnUser(username));
+        }
     }
 }

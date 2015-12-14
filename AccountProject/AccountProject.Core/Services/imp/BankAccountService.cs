@@ -3,7 +3,7 @@
 namespace AccountProject.Core.Services.imp
 {
 
-    class BankAccountService
+    public class BankAccountService : IBankAccountService
     {
         private IBankAccountRepository _bankAccountRepository;
 

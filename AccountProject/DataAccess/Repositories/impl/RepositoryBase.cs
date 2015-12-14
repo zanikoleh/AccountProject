@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Repositories;
 
-namespace DataAccess
+namespace DataAccess.Repositories.impl
 {
-    class RepositoryBase: IRepositoryBase
+    public class RepositoryBase: IRepositoryBase
     {
         private BankContext _bankContext = new BankContext();
 
