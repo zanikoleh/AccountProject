@@ -923,7 +923,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
     <Content Include="layout.html" />
     <Content Include="Templates\register.html" />
     <Content Include="Web.config" />
@@ -938,9 +937,6 @@
     <Compile Include="Controllers\TransactionHistoryController.cs" />
     <Compile Include="Controllers\TransferMoneyController.cs" />
     <Compile Include="Controllers\WithdrawMoneyController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

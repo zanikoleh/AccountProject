@@ -70,8 +70,6 @@ C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bi
 C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\obj\Debug\AccountProject.DataAccess.csprojResolveAssemblyReference.cache
-C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\AccountProject.Models.dll
-C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\AccountProject.Models.pdb
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\DataAccess.exe.config
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\DataAccess.exe
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\DataAccess.pdb
@@ -119,3 +117,18 @@ C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.WebApi.xml
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.WebApi.WebHost.xml
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.Common.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.WebApi.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.WebApi.WebHost.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\WebActivatorEx.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.Common.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.WebApi.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\Ninject.Web.WebApi.WebHost.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\obj\Debug\DataAccess.Migrations.some.resources
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\obj\Debug\AccountProject.DataAccess.csproj.GenerateResource.Cache
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\DataAccess\obj\Debug\DataAccess.Migrations.RowVersion.resources

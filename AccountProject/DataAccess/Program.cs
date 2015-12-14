@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Repositories.impl;
 
 namespace DataAccess
 {
@@ -10,10 +11,11 @@ namespace DataAccess
     {
         static void Main(string[] args)
         {
-            //BankAccounts ac = new BankAccounts { Username = "Nazar", Password = "321" };
-            //RepositoryBase bank = new RepositoryBase();
-            //bank.AddNewAccount(ac);
-            //bank.UpdateAccountBalance("Nazar", -40);
+            using (BankAccountContext ctx = new BankAccountContext())
+            {
+                //ctx.BankAccounts.Add(new BankAccounts { Username = "Oleh", Password = "123", AccountBalance = 50 });
+                //ctx.BankAccounts.Add(new BankAccounts { Username = "Nazar", Password = "321", AccountBalance = 10 });
+            }
         }
     }
 }

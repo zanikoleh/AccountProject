@@ -10,9 +10,9 @@ namespace DataAccess.Repositories.impl
 {
     public class RepositoryBase: IRepositoryBase
     {
-        private BankContext _bankContext = new BankContext();
+        private BankAccountContext _bankContext = new BankAccountContext();
 
-        public BankContext BankContext
+        public BankAccountContext BankContext
         {
             get
             {

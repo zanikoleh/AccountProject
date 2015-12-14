@@ -8,6 +8,6 @@ namespace DataAccess.Repositories
 {
     public interface IRepositoryBase
     {
-        BankContext BankContext { get; set; }
+        BankAccountContext BankContext { get; set; }
     }
 }

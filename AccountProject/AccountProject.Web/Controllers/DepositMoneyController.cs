@@ -18,9 +18,9 @@ namespace AccountProject.Web.Controllers
             this._bankAccountService = bankAccountService;
         }
 
-        //[Authorize]
-        [HttpPost]
-        public IHttpActionResult Post(string username, decimal amount)
+        [Authorize]
+        [HttpPut]
+        public IHttpActionResult Put(string username, decimal amount)
         {
             this._bankAccountService.DepositMoney(username, amount);
             return Ok();

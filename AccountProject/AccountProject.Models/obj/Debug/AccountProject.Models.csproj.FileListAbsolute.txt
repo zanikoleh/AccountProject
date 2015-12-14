@@ -3,3 +3,8 @@ C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.csprojResolveAssemblyReference.cache
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.pdb
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.pdb
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.csprojResolveAssemblyReference.cache
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.pdb
