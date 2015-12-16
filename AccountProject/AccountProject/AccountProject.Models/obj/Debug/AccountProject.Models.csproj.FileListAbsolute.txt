@@ -1,0 +1,15 @@
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.csprojResolveAssemblyReference.cache
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.pdb
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.pdb
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.csprojResolveAssemblyReference.cache
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.dll
+C:\Users\Админ\Documents\GitHub\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.pdb
+C:\Users\zanik\Desktop\AccountProject-66aa672a4e6f3c6194e16a7b0124b7e6932d4066\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.dll
+C:\Users\zanik\Desktop\AccountProject-66aa672a4e6f3c6194e16a7b0124b7e6932d4066\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.pdb
+C:\Users\zanik\Desktop\AccountProject-66aa672a4e6f3c6194e16a7b0124b7e6932d4066\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.csprojResolveAssemblyReference.cache
+C:\Users\zanik\Desktop\AccountProject-66aa672a4e6f3c6194e16a7b0124b7e6932d4066\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.dll
+C:\Users\zanik\Desktop\AccountProject-66aa672a4e6f3c6194e16a7b0124b7e6932d4066\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.pdb
