@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AccountProject.Models
+namespace AccountProject.Models.Models
 {
-    public class Transaction
+    public class TransferModel
     {
-        public string UserName { get; set; }
+        public string CurrentUserName { get; set; }
+        public string TargetUserName { get; set; }
         public decimal Amount { get; set; }
     }
 }

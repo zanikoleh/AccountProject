@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess.Repositories;
-using AccountProject.Models;
+using AccountProject.Models.Models;
 
 namespace AccountProject.Core.Services.imp
 {
@@ -21,17 +18,22 @@ namespace AccountProject.Core.Services.imp
         {
             try
             {
-                var result = new TransactionStatementModel
+                return new ResultModel<IEnumerable<decimal>>
                 {
-                    Username = userName,
-                    Transactions = (from transaction in this._transactionRepository.GetTransactionOnUser(userName)
-                                    select new Transaction { UserName = transaction.Username, Amount = transaction.Amount })
+                    Status = Status.Success,
+                    Message = "",
+                    Object = from transaction in this._transactionRepository.GetTransactionOnUser(userName)
+                             select transaction.Amount
                 };
-                return result;
             }
-            catch(Exception ex)
+            catch
             {
-                return new ErrorModel<TransactionStatementModel> { Status = "Error", Message = ex.Message, Object = new TransactionStatementModel { Username = userName } };
+                return new ResultModel<IEnumerable<decimal>>
+                {
+                    Status = Status.Error,
+                    Message = "Can't find transactions for current user",
+                    Object = null
+                };
             }
         }
     }

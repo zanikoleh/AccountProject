@@ -96,7 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IBankAccountService.cs" />
     <Compile Include="Services\imp\BankAccountService.cs" />
@@ -104,10 +103,6 @@
     <Compile Include="Services\imp\UserAccountService.cs" />
     <Compile Include="Services\IUserAccountService.cs" />
     <Compile Include="Services\ITransactionService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccountProject.Models\AccountProject.Models.csproj">

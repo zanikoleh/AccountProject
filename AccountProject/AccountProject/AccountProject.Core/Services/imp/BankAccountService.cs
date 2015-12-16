@@ -1,4 +1,4 @@
-﻿using AccountProject.Models;
+﻿using AccountProject.Models.Models;
 using DataAccess.Repositories;
 using System;
 
@@ -18,37 +18,85 @@ namespace AccountProject.Core.Services.imp
         {
             try
             {
-                return new GetBalanceModel { Username = userName, Amount = this._bankAccountRepository.GetBalance(userName) };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Success,
+                    Message = "",
+                    Object = new UserModel { Username = userName, Value = this._bankAccountRepository.GetBalance(userName)
+                    }
+                };
             }
-            catch(Exception ex)
+            catch
             {
-                return new ErrorModel<GetBalanceModel> { Status = "Error", Message = ex.Message, Object = new GetBalanceModel { Username = userName, Amount = 0 } };
-            }
-        }
-
-        public IResultModel DepositMoney(string username, decimal value)
-        {
-            try
-            {
-                this._bankAccountRepository.DepositMoney(username, value);
-                return new DepositMoneyModel { Username = username, Amount = value };
-            }
-            catch(Exception ex)
-            {
-                return new ErrorModel<DepositMoneyModel> { Status = "Error", Message = ex.Message, Object = new DepositMoneyModel { Username = username, Amount = value } };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = "Couldn't find balance of current user",
+                    Object = null
+                };
             }
         }
 
-        public IResultModel WithdrawMoney(string username, decimal value)
+        public IResultModel DepositMoney(string userName, decimal value)
         {
             try
             {
-                this._bankAccountRepository.WithdrawMoney(username, value);
-                return new DepositMoneyModel { Username = username, Amount = -1 * value };
+                this._bankAccountRepository.UpdateAccountBalance(userName, value);
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Success,
+                    Message = "",
+                    Object = new UserModel
+                    {
+                        Username = userName,
+                        Value = value
+                    }
+                };
             }
-            catch (Exception ex)
+            catch
             {
-                return new ErrorModel<DepositMoneyModel> { Status = "Error", Message = ex.Message, Object = new DepositMoneyModel { Username = username, Amount = value * (-1) } };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = "Couldn't make deposit for current user",
+                    Object = null
+                };
+            }
+        }
+
+        public IResultModel WithdrawMoney(string userName, decimal value)
+        {
+            try
+            {
+                this._bankAccountRepository.UpdateAccountBalance(userName, -1 * value);
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Success,
+                    Message = "",
+                    Object = new UserModel
+                    {
+                        Username = userName,
+                        Value = value
+                    }
+                };
+            }
+            catch (ArgumentException ex)
+            {
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = ex.Message,
+                    Object = null
+                };
+            }
+            catch
+            {
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = "Couldn't find balance of current user",
+                    Object = null
+                };
             }
         }
 
@@ -57,11 +105,34 @@ namespace AccountProject.Core.Services.imp
             try
             {
                 this._bankAccountRepository.TransferMoney(currentUserName, targetUserName, value);
-                return new TransferMoneyModel { Username = currentUserName, Target = targetUserName, Amount = value };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Success,
+                    Message = "",
+                    Object = new UserModel
+                    {
+                        Username = currentUserName,
+                        Value = value
+                    }
+                };
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                return new ErrorModel<TransferMoneyModel> { Status = "Error", Message = ex.Message, Object = new TransferMoneyModel { Username = currentUserName, Target = targetUserName, Amount = value } };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = ex.Message,
+                    Object = null
+                };
+            }
+            catch
+            {
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = "Couldn't find balance of current user",
+                    Object = null
+                };
             }
         }
     }

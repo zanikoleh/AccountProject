@@ -1,33 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using AccountProject.Core.Services;
-using AccountProject.Core.Services.imp;
-using AccountProject.Models;
-using DataAccess.Repositories.impl;
+using AccountProject.Models.Models;
 
 namespace AccountProject.Web.Controllers
 {
     public class DepositController : ApiController
     {
         private IBankAccountService _bankAccountService;
-        /*public DepositMoneyController()
-        {
-            this._bankAccountService = new BankAccountService(new BankAccountRepository(new RepositoryBase()));
-        }*/
 
-        public DepositController(IBankAccountService serv)
+        public DepositController(IBankAccountService bankAccountService)
         {
-            this._bankAccountService = serv;
+            this._bankAccountService = bankAccountService;
         }
 
         [HttpPost]
-        public IResultModel Post(string username, decimal amount)
+        public IResultModel Post(UserModel model)
         {
-            return this._bankAccountService.DepositMoney(username, amount);
+            if (!string.IsNullOrEmpty(model.Username))
+            {
+                if (model.Value > 0)
+                {
+                    return this._bankAccountService.DepositMoney(model.Username, model.Value);
+                }
+                else
+                {
+                    return new ResultModel<object>
+                    {
+                        Status = Status.Error,
+                        Message = "Amount for deposit must be greater than 0",
+                        Object = null
+                    };
+                }
+            }
+            else
+            {
+                return new ResultModel<object>
+                {
+                    Status = Status.Error,
+                    Message = "User name mustn't be null or empty",
+                    Object = null
+                };
+            }
         }
     }
 }

@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using AccountProject.Core.Services;
-using AccountProject.Core.Services.imp;
-using AccountProject.Models;
-using DataAccess.Repositories.impl;
+using AccountProject.Models.Models;
 
 namespace AccountProject.Web.Controllers
 {
     public class TransferMoneyController : ApiController
     {
         private IBankAccountService _bankAccountService;
-        /*public TransferMoneyController()
-        {
-            this._bankAccountService = new BankAccountService(new BankAccountRepository(new RepositoryBase()));
-        }*/
 
-        public TransferMoneyController(IBankAccountService serv)
+        public TransferMoneyController(IBankAccountService bankAccountService)
         {
-            this._bankAccountService = serv;
+            this._bankAccountService = bankAccountService;
         }
 
         [HttpPost]
-        public IResultModel Post(string currentUser, string targetUser, decimal amount)
+        public IResultModel Post(TransferModel model)
         {
-            return this._bankAccountService.TransferMoney(currentUser, targetUser, amount);
+            if (ModelState.IsValid)
+            {
+                return this._bankAccountService.TransferMoney(model.CurrentUserName, model.TargetUserName, model.Amount);
+            }
+            else
+            {
+                return this._bankAccountService.TransferMoney(model.CurrentUserName, model.TargetUserName, model.Amount);
+            }
         }
     }
 }

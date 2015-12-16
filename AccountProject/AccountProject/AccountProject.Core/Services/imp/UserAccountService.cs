@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Repositories;
-using AccountProject.Models;
+﻿using DataAccess.Repositories;
+using AccountProject.Models.Models;
 
 namespace AccountProject.Core.Services.imp
 {
@@ -22,12 +17,21 @@ namespace AccountProject.Core.Services.imp
             try
             {
                 this._userAccountRepository.AddNewAccount(username, password);
-                return new RegisterModel { Message = "Success!" };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Success,
+                    Message = "",
+                    Object = new UserModel { Username = username, Value = 0 }
+                };
             }
-            catch(Exception ex)
+            catch
             {
-                //return new ErrorModel<RegisterModel> { Status = "Error", Message = ex.Message, Object = new RegisterModel { Message = "Can't create new user" } };
-                return new ErrorModel<Exception> { Status = "Error", Message = "User with such username allready exists in the database", Object = ex };
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Error,
+                    Message = "User with such name allready registered",
+                    Object = null
+                };
             }
         }
     }

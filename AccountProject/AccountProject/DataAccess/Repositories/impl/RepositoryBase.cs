@@ -1,14 +1,6 @@
-﻿using DataAccess.Repositories.impl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Repositories;
-
-namespace DataAccess.Repositories.impl
+﻿namespace DataAccess.Repositories.impl
 {
-    public class RepositoryBase: IRepositoryBase
+    public class RepositoryBase
     {
         private BankAccountContext _bankContext = new BankAccountContext();
 

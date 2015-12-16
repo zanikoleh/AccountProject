@@ -1,12 +1,5 @@
 ﻿using AccountProject.Core.Services;
-using AccountProject.Core.Services.imp;
-using AccountProject.Models;
-using DataAccess.Repositories.impl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+using AccountProject.Models.Models;
 using System.Web.Http;
 
 namespace AccountProject.Web.Controllers
@@ -14,21 +7,29 @@ namespace AccountProject.Web.Controllers
     public class BalanceController : ApiController
     {
         private IBankAccountService _bankAccountService;
-        /*public GetBalanceController()
-        {
-            this._bankAccountService = new BankAccountService(new BankAccountRepository(new RepositoryBase()));
-        }*/
 
-        public BalanceController(IBankAccountService serv)
+        public BalanceController(IBankAccountService bankAccountService)
         {
-            this._bankAccountService = serv;
+            this._bankAccountService = bankAccountService;
         }
 
         [HttpGet]
-        public IResultModel Get(string username)
+        public IResultModel Get(string userName)
         {
-            var result = this._bankAccountService.GetBalance(username);
-            return result;
+            if (!string.IsNullOrEmpty(userName))
+            {
+                var result = this._bankAccountService.GetBalance(userName);
+                return result;
+            }
+            else
+            {
+                return new ResultModel<object>
+                {
+                    Status = Status.Error,
+                    Message = "Username field musn't be null or empty",
+                    Object = null
+                };
+            }
         }
     }
 }

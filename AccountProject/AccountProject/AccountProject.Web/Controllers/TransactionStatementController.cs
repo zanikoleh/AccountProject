@@ -1,33 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Web.Http;
 using AccountProject.Core.Services;
-using AccountProject.Core.Services.imp;
-using AccountProject.Models;
-using DataAccess.Repositories.impl;
+using AccountProject.Models.Models;
 
 namespace AccountProject.Web.Controllers
 {
     public class TransactionStatementController : ApiController
     {
         private ITransactionService _transactionService;
-        /*public TransactionStatementController()
-        {
-            this._transactionService = new TransactionService(new TransactionRepository(new RepositoryBase()));
-        }*/
 
-        public TransactionStatementController(ITransactionService serv)
+        public TransactionStatementController(ITransactionService transactionService)
         {
-            this._transactionService = serv;
+            this._transactionService = transactionService;
         }
 
         [HttpGet]
         public IResultModel Get(string username)
         {
-            return this._transactionService.GetTransactionOnUser(username);
+            if (!string.IsNullOrEmpty(username))
+            {
+                var result = this._transactionService.GetTransactionOnUser(username);
+                return result;
+            }
+            else
+            {
+                return new ResultModel<object>
+                {
+                    Status = Status.Error,
+                    Message = "Username field musn't be null or empty",
+                    Object = null
+                };
+            }
         }
     }
 }

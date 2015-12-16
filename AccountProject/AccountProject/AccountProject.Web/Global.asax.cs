@@ -1,12 +1,5 @@
-﻿using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using AccountProject.Web.App_Start;
 using System.Web.Http;
-using System.Web.Routing;
 
 namespace AccountProject.Web
 {
@@ -14,7 +7,6 @@ namespace AccountProject.Web
     {
         protected void Application_Start()
         {
-
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
