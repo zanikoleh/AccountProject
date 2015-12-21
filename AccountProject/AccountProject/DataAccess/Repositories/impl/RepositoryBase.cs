@@ -1,6 +1,8 @@
-﻿namespace DataAccess.Repositories.impl
+﻿using System;
+
+namespace DataAccess.Repositories.impl
 {
-    public class RepositoryBase
+    public class RepositoryBase: IDisposable
     {
         private BankAccountContext _bankContext = new BankAccountContext();
 
@@ -15,6 +17,11 @@
             {
                 this._bankContext = value;
             }
+        }
+
+        public void Dispose()
+        {
+            _bankContext.Dispose();
         }
     }
 }

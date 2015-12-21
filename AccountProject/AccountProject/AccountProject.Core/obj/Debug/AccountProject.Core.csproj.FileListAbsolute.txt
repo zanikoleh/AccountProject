@@ -171,3 +171,7 @@ C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\obj\Debug\AccountProject.Core.csprojResolveAssemblyReference.cache
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\obj\Debug\AccountProject.Core.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\obj\Debug\AccountProject.Core.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\bin\Debug\AccountProject.Core.dll.config
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Core\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

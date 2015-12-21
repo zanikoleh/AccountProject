@@ -1,26 +1,48 @@
 ﻿using System.Web.Http;
 using AccountProject.Core.Services;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using System;
 using AccountProject.Models.Models;
 
 namespace AccountProject.Web.Controllers
 {
     public class RegisterController : ApiController
     {
-        private IUserAccountService _userAccountService;
+        private IUserAccountService _bankAccountService;
 
-        public RegisterController(IUserAccountService userAccountService)
+        public RegisterController(IUserAccountService bankAccountService)
         {
-            this._userAccountService = userAccountService;
+            this._bankAccountService = bankAccountService;
         }
 
+        [AllowAnonymous]
         [HttpPost]
-        public IResultModel Post(RegisterModel model)
+        public async Task<IResultModel> Post(RegisterModel userModel)
         {
-            if(model.Password != model.ConfirmPassword)
+            if (!ModelState.IsValid)
             {
-                // ToDo
+                return new ResultModel<RegisterModel>
+                {
+                    Status = AccountProject.Models.Models.Status.Error,
+                    Message = "Model is invalid",
+                    Object = userModel
+                };
             }
-            return this._userAccountService.Register(model.UserName, model.Password);
+
+            try
+            {
+                return await _bankAccountService.RegisterAsync(userModel.UserName, userModel.Password);
+            }
+            catch(Exception ex)
+            {
+                return new AccountProject.Models.Models.ResultModel < object >
+                {
+                    Status = AccountProject.Models.Models.Status.Error,
+                    Message = ex.Message,
+                    Object = null
+                };
+            }
         }
     }
 }

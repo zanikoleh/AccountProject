@@ -1,4 +1,6 @@
-﻿namespace DataAccess.Repositories
+﻿using System.Threading.Tasks;
+
+namespace DataAccess.Repositories
 {
     public interface IUserAccountRepository
     {
@@ -6,7 +8,7 @@
         /// Adds new account to database
         /// </summary>
         /// <param name="account">Account to add</param>
-        BankAccounts GetAccount(string userName, string password);
+        Task<BankAccounts> GetAccountAsync(string userName, string password);
 
 
         /// <summary>
@@ -15,6 +17,13 @@
         /// <param name="userName">Username to find</param>
         /// <param name="password">Password to find</param>
         /// <returns></returns>
-        void AddNewAccount(string userName, string password);
+        Task AddNewAccountAsync(string userName, string password);
+
+        /// <summary>
+        /// Checks if user is allready in database
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        Task<bool> IsExistAsync(string userName);
     }
 }

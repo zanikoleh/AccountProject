@@ -1,5 +1,6 @@
 ﻿using AccountProject.Core.Services;
 using AccountProject.Models.Models;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace AccountProject.Web.Controllers
@@ -13,12 +14,13 @@ namespace AccountProject.Web.Controllers
             this._bankAccountService = bankAccountService;
         }
 
+        [Authorize]
         [HttpGet]
-        public IResultModel Get(string userName)
+        public async Task<IResultModel> Get(string userName)
         {
             if (!string.IsNullOrEmpty(userName))
             {
-                var result = this._bankAccountService.GetBalance(userName);
+                var result = await this._bankAccountService.GetBalanceAsync(userName);
                 return result;
             }
             else

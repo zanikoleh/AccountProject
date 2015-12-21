@@ -18,3 +18,10 @@ C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.csprojResolveAssemblyReference.cache
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\obj\Debug\AccountProject.Models.pdb
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\AccountProject.Models.dll.config
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\EntityFramework.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\EntityFramework.xml
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\AccountProject.Models\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

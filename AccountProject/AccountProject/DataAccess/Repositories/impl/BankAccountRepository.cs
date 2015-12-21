@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace DataAccess.Repositories.impl
 {
@@ -11,11 +13,11 @@ namespace DataAccess.Repositories.impl
         /// </summary>
         /// <param name="userName">Account's username</param>
         /// <returns>BankAccount instance</returns>
-        private BankAccounts GetAccount(string userName)
+        private async Task<BankAccounts> GetAccountAsync(string userName)
         {
-            return (from user in this.BankContext.BankAccounts
+            return await (from user in this.BankContext.BankAccounts
                     where user.Username == userName
-                    select user).FirstOrDefault();
+                    select user).SingleOrDefaultAsync();
         }
 
         /// <summary>
@@ -24,7 +26,7 @@ namespace DataAccess.Repositories.impl
         /// <param name="account">Account to check</param>
         /// <param name="value">Value to check</param>
         /// <returns>True if update is valid</returns>
-        private bool valideUpdate(BankAccounts account, decimal value)
+        private bool IsValideUpdate(BankAccounts account, decimal value)
         {
             decimal firstValue = account.AccountBalance;
             decimal secondValue = -1 * value;
@@ -38,15 +40,16 @@ namespace DataAccess.Repositories.impl
             }
         }
 
-        public decimal GetBalance(string userName)
+        public async Task<decimal> GetBalanceAsync(string userName)
         {
-            return this.GetAccount(userName).AccountBalance;
+            var user = await this.GetAccountAsync(userName);
+            return user.AccountBalance;
         }
 
-        public void UpdateAccountBalance(string userName, decimal value)
+        public async Task UpdateAccountBalanceAsync(string userName, decimal value)
         {
-            var account = this.GetAccount(userName);
-            if (valideUpdate(account, value))
+            var account = await this.GetAccountAsync(userName);
+            if (IsValideUpdate(account, value))
             {
                 bool saveFailed;
                 do
@@ -57,7 +60,7 @@ namespace DataAccess.Repositories.impl
                         var transaction = new Transactions { Username = account.Username, Amount = value };
                         account.AccountBalance += value;
                         this.BankContext.Transactions.Add(transaction);
-                        this.BankContext.SaveChanges();
+                        await this.BankContext.SaveChangesAsync();
                     }
                     catch (DbUpdateConcurrencyException ex)
                     {
@@ -73,7 +76,7 @@ namespace DataAccess.Repositories.impl
             }
         }
 
-        public void TransferMoney(string currentUserName, string targetUserName, decimal value)
+        public async Task TransferMoneyAsync(string currentUserName, string targetUserName, decimal value)
         {
             bool saveFailed;
             do
@@ -81,13 +84,13 @@ namespace DataAccess.Repositories.impl
                 saveFailed = false;
                 try
                 {
-                    BankAccounts currentUser = this.GetAccount(currentUserName);
-                    if (valideUpdate(currentUser, value))
+                    BankAccounts currentUser = await this.GetAccountAsync(currentUserName);
+                    if (IsValideUpdate(currentUser, value))
                     {
-                        BankAccounts targetUser = this.GetAccount(targetUserName);
+                        BankAccounts targetUser = await this.GetAccountAsync(targetUserName);
                         currentUser.AccountBalance -= value;
                         targetUser.AccountBalance += value;
-                        this.BankContext.SaveChanges();
+                        await this.BankContext.SaveChangesAsync();
                     }
                     else
                     {

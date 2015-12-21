@@ -1,6 +1,9 @@
 ﻿using System.Web.Http;
 using AccountProject.Core.Services;
 using AccountProject.Models.Models;
+using System.Threading.Tasks;
+using System.Security.Claims;
+using System.Linq;
 
 namespace AccountProject.Web.Controllers
 {
@@ -13,34 +16,30 @@ namespace AccountProject.Web.Controllers
             this._bankAccountService = bankAccountService;
         }
 
+        [Authorize]
         [HttpPost]
-        public IResultModel Post(UserModel model)
+        public async Task<IResultModel> Post(UserModel model)
         {
-            if (!string.IsNullOrEmpty(model.Username))
+            var identity = User.Identity as ClaimsIdentity;
+            var claims = from c in identity.Claims
+                         select new
+                         {
+                             subject = c.Subject.Name,
+                             type = c.Type,
+                             value = c.Value
+                         };
+
+
+            if (!ModelState.IsValid)
             {
-                if (model.Value > 0)
-                {
-                    return this._bankAccountService.DepositMoney(model.Username, model.Value);
-                }
-                else
-                {
-                    return new ResultModel<object>
-                    {
-                        Status = Status.Error,
-                        Message = "Amount for deposit must be greater than 0",
-                        Object = null
-                    };
-                }
-            }
-            else
-            {
-                return new ResultModel<object>
+                return new ResultModel<UserModel>
                 {
                     Status = Status.Error,
-                    Message = "User name mustn't be null or empty",
-                    Object = null
+                    Message = "Model is invalid",
+                    Object = model
                 };
             }
+            return await this._bankAccountService.DepositMoneyAsync(model.Username, model.Amount);
         }
     }
 }

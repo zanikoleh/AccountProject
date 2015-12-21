@@ -1,6 +1,7 @@
 ﻿using AccountProject.Models.Models;
 using DataAccess.Repositories;
 using System;
+using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services.imp
 {
@@ -14,7 +15,7 @@ namespace AccountProject.Core.Services.imp
             this._bankAccountRepository = bankAccountRepository;
         }
 
-        public IResultModel GetBalance(string userName)
+        public async Task<IResultModel> GetBalanceAsync(string userName)
         {
             try
             {
@@ -22,7 +23,7 @@ namespace AccountProject.Core.Services.imp
                 {
                     Status = Status.Success,
                     Message = "",
-                    Object = new UserModel { Username = userName, Value = this._bankAccountRepository.GetBalance(userName)
+                    Object = new UserModel { Username = userName, Amount = await this._bankAccountRepository.GetBalanceAsync(userName)
                     }
                 };
             }
@@ -37,11 +38,11 @@ namespace AccountProject.Core.Services.imp
             }
         }
 
-        public IResultModel DepositMoney(string userName, decimal value)
+        public async Task<IResultModel> DepositMoneyAsync(string userName, decimal value)
         {
             try
             {
-                this._bankAccountRepository.UpdateAccountBalance(userName, value);
+                await this._bankAccountRepository.UpdateAccountBalanceAsync(userName, value);
                 return new ResultModel<UserModel>
                 {
                     Status = Status.Success,
@@ -49,7 +50,7 @@ namespace AccountProject.Core.Services.imp
                     Object = new UserModel
                     {
                         Username = userName,
-                        Value = value
+                        Amount = value
                     }
                 };
             }
@@ -64,11 +65,11 @@ namespace AccountProject.Core.Services.imp
             }
         }
 
-        public IResultModel WithdrawMoney(string userName, decimal value)
+        public async Task<IResultModel> WithdrawMoneyAsync(string userName, decimal value)
         {
             try
             {
-                this._bankAccountRepository.UpdateAccountBalance(userName, -1 * value);
+                await this._bankAccountRepository.UpdateAccountBalanceAsync(userName, -1 * value);
                 return new ResultModel<UserModel>
                 {
                     Status = Status.Success,
@@ -76,7 +77,7 @@ namespace AccountProject.Core.Services.imp
                     Object = new UserModel
                     {
                         Username = userName,
-                        Value = value
+                        Amount = value
                     }
                 };
             }
@@ -100,11 +101,11 @@ namespace AccountProject.Core.Services.imp
             }
         }
 
-        public IResultModel TransferMoney(string currentUserName, string targetUserName, decimal value)
+        public async Task<IResultModel> TransferMoneyAsync(string currentUserName, string targetUserName, decimal value)
         {
             try
             {
-                this._bankAccountRepository.TransferMoney(currentUserName, targetUserName, value);
+                await this._bankAccountRepository.TransferMoneyAsync(currentUserName, targetUserName, value);
                 return new ResultModel<UserModel>
                 {
                     Status = Status.Success,
@@ -112,7 +113,7 @@ namespace AccountProject.Core.Services.imp
                     Object = new UserModel
                     {
                         Username = currentUserName,
-                        Value = value
+                        Amount = value
                     }
                 };
             }

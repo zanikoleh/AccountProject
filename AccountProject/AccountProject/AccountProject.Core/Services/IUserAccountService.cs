@@ -1,4 +1,5 @@
 ﻿using AccountProject.Models.Models;
+using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services
 {
@@ -7,9 +8,9 @@ namespace AccountProject.Core.Services
         /// <summary>
         /// Register new user
         /// </summary>
-        /// <param name="username">Name of new user</param>
+        /// <param name="userName">Name of new user</param>
         /// <param name="password">Password of new user</param>
         /// <returns>Result model, which includes all nessesary data</returns>
-        IResultModel Register(string username, string password);
+        Task<IResultModel> RegisterAsync(string userName, string password);
     }
 }

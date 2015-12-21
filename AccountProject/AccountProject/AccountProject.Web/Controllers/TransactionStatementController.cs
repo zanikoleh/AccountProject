@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using AccountProject.Core.Services;
 using AccountProject.Models.Models;
+using System.Threading.Tasks;
 
 namespace AccountProject.Web.Controllers
 {
@@ -13,12 +14,13 @@ namespace AccountProject.Web.Controllers
             this._transactionService = transactionService;
         }
 
+        [Authorize]
         [HttpGet]
-        public IResultModel Get(string username)
+        public async Task<IResultModel> Get(string username)
         {
             if (!string.IsNullOrEmpty(username))
             {
-                var result = this._transactionService.GetTransactionOnUser(username);
+                var result = await this._transactionService.GetTransactionByUserAsync(username);
                 return result;
             }
             else

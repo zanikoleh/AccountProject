@@ -187,8 +187,6 @@ C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\DataAccess.pdb
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\EntityFramework.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\Microsoft.Owin.dll
-C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 C:\Users\zanik\OneDrive\Документи\GitHub\AccountProject\AccountProject\AccountProject\DataAccess\bin\Debug\Microsoft.Practices.Unity.dll

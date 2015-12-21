@@ -1,5 +1,7 @@
 ﻿using DataAccess.Repositories;
 using AccountProject.Models.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services.imp
 {
@@ -12,25 +14,26 @@ namespace AccountProject.Core.Services.imp
             this._userAccountRepository = userAccountRepository;
         }
 
-        public IResultModel Register(string username, string password)
+        public async Task<IResultModel> RegisterAsync(string userName, string password)
         {
-            try
+            bool used = await this._userAccountRepository.IsExistAsync(userName);
+            if (used)
             {
-                this._userAccountRepository.AddNewAccount(username, password);
-                return new ResultModel<UserModel>
-                {
-                    Status = Status.Success,
-                    Message = "",
-                    Object = new UserModel { Username = username, Value = 0 }
-                };
-            }
-            catch
-            {
-                return new ResultModel<UserModel>
+                return new ResultModel<object>
                 {
                     Status = Status.Error,
                     Message = "User with such name allready registered",
                     Object = null
+                };
+            }
+            else
+            {
+                await this._userAccountRepository.AddNewAccountAsync(userName, password);
+                return new ResultModel<UserModel>
+                {
+                    Status = Status.Success,
+                    Message = "",
+                    Object = new UserModel { Username = userName, Amount = 0 }
                 };
             }
         }

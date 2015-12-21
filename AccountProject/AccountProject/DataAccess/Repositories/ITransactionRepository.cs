@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
@@ -9,6 +10,6 @@ namespace DataAccess.Repositories
         /// </summary>
         /// <param name="userName">Username on which transactions to get</param>
         /// <returns>Collection of transactions</returns>
-        IEnumerable<Transactions> GetTransactionOnUser(string userName);
+        Task<IEnumerable<Transactions>> GetTransactionByUserAsync(string userName);
     }
 }

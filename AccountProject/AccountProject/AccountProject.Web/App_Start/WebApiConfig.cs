@@ -1,8 +1,12 @@
 ﻿using AccountProject.Core.Services;
 using AccountProject.Core.Services.imp;
+using AccountProject.Web.App_Start;
 using DataAccess.Repositories;
 using DataAccess.Repositories.impl;
 using Microsoft.Practices.Unity;
+using Newtonsoft.Json.Serialization;
+using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace AccountProject.Web
@@ -19,14 +23,8 @@ namespace AccountProject.Web
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            var container = new UnityContainer();
-            container.RegisterType<IBankAccountService, BankAccountService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IUserAccountService, UserAccountService>(new HierarchicalLifetimeManager());
-            container.RegisterType<ITransactionService, TransactionService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IBankAccountRepository, BankAccountRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<ITransactionRepository, TransactionRepository>(new HierarchicalLifetimeManager());
-            container.RegisterType<IUserAccountRepository, UserAccountRepository>(new HierarchicalLifetimeManager());
-            config.DependencyResolver = new UnityResolver(container);
+            IoCRegistry.Resolve(config);
+            FormaterRegistry.Resolve(config);
         }
     }
 }

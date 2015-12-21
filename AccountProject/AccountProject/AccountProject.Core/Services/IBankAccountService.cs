@@ -1,4 +1,5 @@
 ﻿using AccountProject.Models.Models;
+using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services
 {
@@ -10,14 +11,14 @@ namespace AccountProject.Core.Services
         /// <param name="userName">Name of user to make deposit</param>
         /// <param name="value">Amount to deposit</param>
         /// <returns>Result model, which includes all nessesary data</returns>
-        IResultModel DepositMoney(string username, decimal value);
+        Task<IResultModel> DepositMoneyAsync(string userName, decimal value);
 
         /// <summary>
         /// Gets balance on user
         /// </summary>
         /// <param name="userName">Name of user to get balance</param>
         /// <returns>Result model, which includes all nessesary data</returns>
-        IResultModel GetBalance(string userName);
+        Task<IResultModel> GetBalanceAsync(string userName);
 
         /// <summary>
         /// Withdraws money for user
@@ -25,7 +26,7 @@ namespace AccountProject.Core.Services
         /// <param name="userName">Name of user to make withdraw</param>
         /// <param name="value">Amount to withdraw</param>
         /// <returns>Result model, which includes all nessesary data</returns>
-        IResultModel WithdrawMoney(string userName, decimal value);
+        Task<IResultModel> WithdrawMoneyAsync(string userName, decimal value);
 
         /// <summary>
         /// Transfer money from one user to another
@@ -34,6 +35,6 @@ namespace AccountProject.Core.Services
         /// <param name="targetUserName">Name of user, who will recieve money</param>
         /// <param name="value">Amount to transfer</param>
         /// <returns>Result model, which includes all nessesary data</returns>
-        IResultModel TransferMoney(string currentUserName, string targetUserName, decimal value);
+        Task<IResultModel> TransferMoneyAsync(string currentUserName, string targetUserName, decimal value);
     }
 }

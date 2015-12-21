@@ -2,6 +2,7 @@
 using System.Linq;
 using DataAccess.Repositories;
 using AccountProject.Models.Models;
+using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services.imp
 {
@@ -14,15 +15,16 @@ namespace AccountProject.Core.Services.imp
             this._transactionRepository = transactionRepository;
         }
 
-        public IResultModel GetTransactionOnUser(string userName)
+        public async Task<IResultModel> GetTransactionByUserAsync(string userName)
         {
             try
             {
+                var transactions = await this._transactionRepository.GetTransactionByUserAsync(userName);
                 return new ResultModel<IEnumerable<decimal>>
                 {
                     Status = Status.Success,
                     Message = "",
-                    Object = from transaction in this._transactionRepository.GetTransactionOnUser(userName)
+                    Object = from transaction in transactions
                              select transaction.Amount
                 };
             }

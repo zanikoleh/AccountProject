@@ -1,4 +1,5 @@
 ﻿using AccountProject.Models.Models;
+using System.Threading.Tasks;
 
 namespace AccountProject.Core.Services
 {
@@ -9,6 +10,6 @@ namespace AccountProject.Core.Services
         /// </summary>
         /// <param name="userName">Name of user for transactions to get</param>
         /// <returns>Result model, which includes all nessesary data</returns>
-        IResultModel GetTransactionOnUser(string userName);
+        Task<IResultModel> GetTransactionByUserAsync(string userName);
     }
 }
